@@ -8,7 +8,7 @@ namespace RickAndMortyGame
 {
     public class ProgramUI
     {
-        public enum Item { plubmus, meeseeks, portalgun, beer };
+        public enum Item { plumbus, meeseeks, portalgun, beer };
         public List<Item> inventory = new List<Item>();
         string room = "garage";
         public void Run()
@@ -33,8 +33,26 @@ namespace RickAndMortyGame
                     } else if (command.Contains("house"))
                     {
                         House();
+                    } else
+                    {
+                        Console.WriteLine("Go where??");
                     }
-                } else
+                }
+                else if (command.StartsWith("get "))
+                {
+                    if (command.Contains("plumbus"))
+                    {
+                        if (inventory.Contains(Item.plumbus))
+                        {
+                            Console.WriteLine("You already got the plumbus");
+                        } else
+                        {
+                            Console.WriteLine("You find a slightly used plumbus");
+                            inventory.Add(Item.plumbus);
+                        }
+                    }
+                }
+                else
                 {
                     Console.WriteLine("What?");
                 }
