@@ -3,25 +3,25 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using static RickAndMortyGame.Attack;
 
 namespace RickAndMortyGame.Mortys
 {
     public class WerewolfMorty : IMorty
     {
-        Random rand = new Random();
         public int Health { get; set; } = 25;
         public void Scream()
         {
             Console.WriteLine("RRAAAWWWWWOOOOOOOoooooOOOOooooowwww");
         }
-        public void Hurt(int damage)
+        public void Hurt(Attack attack)
         {
-            Health -= damage;
+            Health -= attack.Damage;
             Scream();
         }
-        public int Attack()
+        public Attack Attack()
         {
-            return rand.Next(5, 11);
+            return new Attack(5, 10, DamageType.Slashing);
         }
     }
 }
