@@ -10,9 +10,26 @@ namespace RickAndMortyGame
     {
         public enum Item { plumbus, meeseeks, portalgun, beer };
         public List<Item> inventory = new List<Item>();
-        string room = "garage";
+
+        public static Room garage = new Room(
+            Texts.Splashes["garage"],
+            new List<string> { "driveway", "house" },
+            new List<Item> { Item.meeseeks, Item.plumbus }
+        );
+        public static Room driveway = new Room(
+            Texts.Splashes["driveway"],
+            new List<string> { "garage" },
+            new List<Item> { }
+        );
+        public static Room house = new Room(
+            Texts.Splashes["house"],
+            new List<string> { "garage" },
+            new List<Item> { Item.portalgun, Item.beer }
+        );
+
         public void Run()
         {
+            Room room = garage;
             bool alive = true;
             Console.Clear();
             Console.WriteLine("You accidentally killed Morty.\n" +
@@ -22,17 +39,17 @@ namespace RickAndMortyGame
             while (alive)
             {
                 // Show the splash text for the current room
-                Console.WriteLine(Texts.Splashes[room]);
+                Console.WriteLine(room.Splash);
                 string command = Console.ReadLine().ToLower();
                 Console.Clear();
                 if (command.StartsWith("go "))
                 {
                     if (command.Contains("driveway"))
                     {
-                        Driveway();
+                        room = driveway;
                     } else if (command.Contains("house"))
                     {
-                        House();
+                        room = house;
                     } else
                     {
                         Console.WriteLine("Go where??");
@@ -50,6 +67,9 @@ namespace RickAndMortyGame
                             Console.WriteLine("You find a slightly used plumbus");
                             inventory.Add(Item.plumbus);
                         }
+                    } else
+                    {
+                        Console.WriteLine("I don't know what you're talking about");
                     }
                 }
                 else
@@ -57,17 +77,6 @@ namespace RickAndMortyGame
                     Console.WriteLine("What?");
                 }
             }
-        }
-        public void Driveway()
-        {
-            // Console.WriteLine("You are in the driveway");
-            room = "driveway";
-
-        }
-        public void House()
-        {
-            // Console.WriteLine("You are in the house");
-            room = "house";
         }
     }
 }
