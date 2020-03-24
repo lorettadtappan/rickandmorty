@@ -1,0 +1,29 @@
+﻿using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace RickAndMortyGame
+{
+    public class Texts
+    {
+        public static Dictionary<string, string> Splashes = new Dictionary<string, string>()
+        {
+            {
+                "garage", "\n\n\n\n\nYou're in the garage with all your junk and crap.\n\n" +
+                    "Obvious exits are DRIVEWAY and HOUSE\n"
+            },
+            {
+                "driveway", "\n\n\n\n\nYou're in the driveway. The car is gone but " +
+                    "the oil stain is still there.\n\n" +
+                    "Obvious exits are GARAGE and YARD\n"
+            },
+            {
+                "house", "\n\n\n\n\nYou're in the house now. It's drab and smells like " +
+                    "lemon pine-sol with a hint of stale fart.\n\n" +
+                    "Obvious exits are GARAGE and KITCHEN\n"
+            }
+        };
+    }
+}

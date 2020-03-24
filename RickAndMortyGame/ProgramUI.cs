@@ -8,6 +8,9 @@ namespace RickAndMortyGame
 {
     public class ProgramUI
     {
+        public enum Item { plubmus, meeseeks, portalgun, beer };
+        public List<Item> inventory = new List<Item>();
+        string room = "garage";
         public void Run()
         {
             bool alive = true;
@@ -18,8 +21,8 @@ namespace RickAndMortyGame
                     "Morty's genetic structure and connectome.");
             while (alive)
             {
-                Console.WriteLine("\n\n\n\n\nYou're in the garage with all your junk and crap.\n\n" +
-                    "Obvious exits are DRIVEWAY and HOUSE\n");
+                // Show the splash text for the current room
+                Console.WriteLine(Texts.Splashes[room]);
                 string command = Console.ReadLine().ToLower();
                 Console.Clear();
                 if (command.StartsWith("go "))
@@ -39,11 +42,14 @@ namespace RickAndMortyGame
         }
         public void Driveway()
         {
-            Console.WriteLine("You are in the driveway");
+            // Console.WriteLine("You are in the driveway");
+            room = "driveway";
+
         }
         public void House()
         {
-            Console.WriteLine("You are in the house");
+            // Console.WriteLine("You are in the house");
+            room = "house";
         }
     }
 }
