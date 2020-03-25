@@ -27,6 +27,13 @@ namespace RickAndMortyGame
             new List<Item> { Item.portalgun, Item.beer }
         );
 
+        public Dictionary<string, Room> RoomDictionary = new Dictionary<string, Room>
+        {
+            { "garage", garage },
+            { "driveway", driveway },
+            { "house", house },
+        };
+
         public void Run()
         {
             Room room = garage;
@@ -38,43 +45,74 @@ namespace RickAndMortyGame
                     "Morty's genetic structure and connectome.");
             while (alive)
             {
-                // Show the splash text for the current room
                 Console.WriteLine(room.Splash);
                 string command = Console.ReadLine().ToLower();
                 Console.Clear();
-                if (command.StartsWith("go "))
+                if (command.StartsWith("go ") || command.StartsWith("exit"))
                 {
-                    if (command.Contains("driveway"))
+                    bool foundExit = false;
+                    foreach (string exit in room.Exits)
                     {
-                        room = driveway;
-                    } else if (command.Contains("house"))
+                        if (!foundExit &&
+                            command.Contains(exit) &&
+                            RoomDictionary.ContainsKey(exit))
+                        {
+                            room = RoomDictionary[exit];
+                            foundExit = true;
+                            break;
+                        }
+                    }
+                    if (!foundExit)
                     {
-                        room = house;
-                    } else
-                    {
-                        Console.WriteLine("Go where??");
+                        Console.WriteLine("Uh... Go where?");
                     }
                 }
-                else if (command.StartsWith("get "))
+                else if (command.StartsWith("get ") || command.StartsWith("take ") || command.StartsWith("grab "))
                 {
-                    if (command.Contains("plumbus"))
+                    bool foundItem = false;
+                    foreach (Item item in room.Items)
                     {
-                        if (inventory.Contains(Item.plumbus))
+                        if (!foundItem && command.Contains(item.ToString()))
                         {
-                            Console.WriteLine("You already got the plumbus");
-                        } else
-                        {
-                            Console.WriteLine("You find a slightly used plumbus");
-                            inventory.Add(Item.plumbus);
+                            Random rand = new Random();
+                            int flavorTextChoice = rand.Next(0, 3);
+                            string flavorText;
+                            switch (flavorTextChoice)
+                            {
+                                case 0:
+                                    flavorText = ". Don't break it.";
+                                    break;
+                                case 1:
+                                    flavorText = ". Good for you.";
+                                    break;
+                                case 2:
+                                default:
+                                    flavorText = ". Fantastic.";
+                                    break;
+                            }
+                            Console.WriteLine("You found a(n) " + item.ToString() + flavorText);
+                            room.RemoveItem(item);
+                            inventory.Add(item);
+                            foundItem = true;
+                            break;
                         }
-                    } else
-                    {
-                        Console.WriteLine("I don't know what you're talking about");
                     }
+                    if (!foundItem)
+                    {
+                        Console.WriteLine("I don't know what you're talking about.");
+                    }
+                }
+                else if (command.StartsWith("look ") || command.StartsWith("check "))
+                {
+                    Console.WriteLine("It looks fine.");
+                }
+                else if (command.StartsWith("use ") || command.StartsWith("activate "))
+                {
+                    Console.WriteLine("I doubt you know how.");
                 }
                 else
                 {
-                    Console.WriteLine("What?");
+                    Console.WriteLine("*BUUUUURP* What?");
                 }
             }
         }
