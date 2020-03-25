@@ -10,8 +10,8 @@ namespace RickAndMortyGame
     public class Room
     {
         public string Splash { get; }
-        public List<string> Exits { get; }
-        public List<Item> Items { get; }
+        private List<string> Exits { get; }
+        private List<Item> Items { get; }
         public Room(string splash, List<string> exits, List<Item> items)
         {
             Splash = splash;
