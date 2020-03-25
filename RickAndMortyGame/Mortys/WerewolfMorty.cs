@@ -12,27 +12,22 @@ namespace RickAndMortyGame.Mortys
         public int Health { get; set; } = 25;
         public void Scream()
         {
-            Console.WriteLine("RRAAAWWWWWOOOOOOOoooooOOOOooooowwww");
+            Console.WriteLine("RAWWWOOOOOoooOOOoooowwww");
         }
         public void Hurt(Attack attack)
         {
-            if (attack.Type == DamageType.Bludgeoning)
+            if (attack.Type == DamageType.Piercing || attack.Type == DamageType.Shocking)
             {
-                Health -= attack.Damage / 2;
+                attack.Damage = (int)Math.Floor(attack.Damage * 1.5);
             }
-            else if (attack.Type == DamageType.Piercing)
+            else if (attack.Type == DamageType.Bludgeoning || attack.Type == DamageType.Psych)
             {
-                Health -= attack.Damage * 2;
+                attack.Damage = (int)Math.Ceiling(attack.Damage * 0.5);
             }
-            else
-            {
-                Health -= attack.Damage;
-                Scream();
-            }
+            Health -= attack.Damage;
         }
         public Attack Attack()
         {
-            // If health is low, attack is higher or lower?? Which makes more sense?
             return new Attack(5, 10, DamageType.Slashing);
         }
     }

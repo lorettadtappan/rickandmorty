@@ -8,6 +8,7 @@ namespace RickAndMortyGame
 {
     public class ProgramUI
     {
+        // This can be a class later
         public enum Item { plumbus, meeseeks, portalgun, beer };
         public List<Item> inventory = new List<Item>();
 
