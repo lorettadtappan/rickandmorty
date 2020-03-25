@@ -8,6 +8,12 @@ namespace RickAndMortyGame
 {
     public class Texts
     {
+        // This class only exists to keep things a little more organized.
+        // It keeps my Run() method from having a whole bunch of text in it, which
+        //    makes it hard to read.
+
+        // If we eventually add character dialogue or anything like that, those
+        //    strings can be stored here, as well.
         public static Dictionary<string, string> Splashes = new Dictionary<string, string>()
         {
             {

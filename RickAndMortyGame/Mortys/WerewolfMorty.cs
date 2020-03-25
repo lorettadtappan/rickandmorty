@@ -14,6 +14,9 @@ namespace RickAndMortyGame.Mortys
         {
             Console.WriteLine("RAWWWOOOOOoooOOOoooowwww");
         }
+        // I haven't used either of these methods in the game yet. I have no idea
+        //    how combat is going to work yet, but I know this makes sense to me
+        //    so I should be able to use it when I get to that point:
         public void Hurt(Attack attack)
         {
             if (attack.Type == DamageType.Piercing || attack.Type == DamageType.Shocking)
@@ -26,6 +29,8 @@ namespace RickAndMortyGame.Mortys
             }
             Health -= attack.Damage;
         }
+        // This makes sense for now, but it might change a lot in the future,
+        //    once it's actually used somewhere:
         public Attack Attack()
         {
             return new Attack(5, 10, DamageType.Slashing);

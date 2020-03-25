@@ -48,9 +48,23 @@ namespace RickAndMortyGame
             {
                 Console.WriteLine(room.Splash);
                 string command = Console.ReadLine().ToLower();
+                // I clear the console before parsing the command, because
+                //   I want the response at the top of the screen.
+                // I also don't want to clear the screen until after the
+                //   Console.ReadLine statement, so the user can still see the text
                 Console.Clear();
                 if (command.StartsWith("go ") || command.StartsWith("exit"))
                 {
+                    // Here is some pseudocode to describe what's happening here:
+
+                    // Loop through the available exits
+                    //   If the room has an exit that matches the command
+                    //     Then change the current room to that room
+                    // (after the loop)
+                    // If no valid room name can be found in their command
+                    //   Then say "Go where??"
+                    // (that last part is what the "foundExit" variable is for)
+
                     bool foundExit = false;
                     foreach (string exit in room.Exits)
                     {
@@ -70,6 +84,7 @@ namespace RickAndMortyGame
                 }
                 else if (command.StartsWith("get ") || command.StartsWith("take ") || command.StartsWith("grab "))
                 {
+                    // I use similar logic here
                     bool foundItem = false;
                     foreach (Item item in room.Items)
                     {
@@ -105,6 +120,8 @@ namespace RickAndMortyGame
                 }
                 else if (command.StartsWith("look ") || command.StartsWith("check "))
                 {
+                    // I haven't used this yet. Maybe the player can examine things in
+                    //   the room to unlock secrets. I don't know yet...
                     Console.WriteLine("It looks fine.");
                 }
                 else if (command.StartsWith("use ") || command.StartsWith("activate "))

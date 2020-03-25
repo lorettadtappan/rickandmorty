@@ -10,7 +10,7 @@ namespace RickAndMortyGame
     {
         static void Main(string[] args)
         {
-            // Load Saved Data
+            // Load Saved Data??
             ProgramUI game = new ProgramUI();
             game.Run();
 
