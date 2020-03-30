@@ -33,13 +33,17 @@ namespace RickAndMortyGame
             {
                 "upstairs", "\n\n\n\n\nYou're upstairs in the house now. It's dark and " +
                     "smells like mold and sweaty socks.\n\n" +
-                    "Obvious exits are HOUSE and ATTIC\n"
+                    "Obvious exits are MORTY'S ROO, HOUSE and ATTIC\n"
             },
             {
                 "attic", "\n\n\n\n\nYou're in the attic. Now you're lost in the dark" +
                     "there seem to be dead mice and bats everywhere. Run for your life!\n\n" +
                     "Obvious exits are UPSTAIRS\n"
-            }
+            },
+            {
+                "mortysRoom", "You're in Morty's room. It's filthy.\n\n" +
+                    "Obvious exits are UPSTAIRS\n"
+            },
         };
     }
 }

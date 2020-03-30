@@ -29,11 +29,16 @@ namespace RickAndMortyGame
         );
         public static Room upstairs = new Room(
             Texts.Splashes["upstairs"],
-            new List<string> { "house", "attic" },
+            new List<string> { "house", "attic", "mortysRoom" },
             new List<Item> { }
         );
         public static Room attic = new Room(
             Texts.Splashes["attic"],
+            new List<string> { "upstairs" },
+            new List<Item> { }
+        );
+        public static Room mortysRoom = new Room(
+            Texts.Splashes["mortysRoom"],
             new List<string> { "upstairs" },
             new List<Item> { }
         );
@@ -43,8 +48,9 @@ namespace RickAndMortyGame
             { "garage", garage },
             { "driveway", driveway },
             { "house", house },
-            {"upstairs", upstairs },
-            {"attic", attic }
+            { "upstairs", upstairs },
+            { "attic", attic },
+            { "mortysRoom", mortysRoom }
         };
 
         public void Run()
