@@ -37,6 +37,11 @@ namespace RickAndMortyGame
             new List<string> { "upstairs" },
             new List<Item> { }
         );
+        public static Room mortysRoom = new Room(
+            Texts.Splashes["mortysRoom"],
+            new List<string> { "upstairs" },
+            new List<Item> { }
+        );
 
         public Dictionary<string, Room> RoomDictionary = new Dictionary<string, Room>
         {
@@ -44,7 +49,8 @@ namespace RickAndMortyGame
             { "driveway", driveway },
             { "house", house },
             {"upstairs", upstairs },
-            {"attic", attic }
+            {"attic", attic },
+            { "mortysRoom", mortysRoom }
         };
 
         public void Run()
