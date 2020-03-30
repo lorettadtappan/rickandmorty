@@ -41,9 +41,9 @@ namespace RickAndMortyGame
                     "Obvious exits are UPSTAIRS\n"
             },
             {
-                "mortysRoom", "You're in Morty's room. It's filthy.\n\n" +
+                "mortysRoom", "\n\n\n\n\nYou're in Morty's room. It's filthy.\n\n" +
                     "Obvious exits are UPSTAIRS\n"
-            },
+            }
         };
     }
 }
