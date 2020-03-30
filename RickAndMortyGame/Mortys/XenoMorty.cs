@@ -14,7 +14,6 @@ namespace RickAndMortyGame.Mortys
         {
             Console.WriteLine("RAWWWWRWRRRRRRRRRRRRSSSHHHHHHHHH");
         }
-
         public void Hurt(Attack attack)
         {
             if (attack.Type == DamageType.Psych || attack.Type == DamageType.Radiant)
@@ -40,7 +39,6 @@ namespace RickAndMortyGame.Mortys
             {
                 return new Attack(5, 15, DamageType.Slashing);
             }
-            
         }
     }
 }

@@ -7,7 +7,7 @@ using static RickAndMortyGame.Attack;
 
 namespace RickAndMortyGame.Mortys
 {
-    public class MerMorty
+    public class MerMorty : IMorty
     {
         public int Health { get; set; } = 20;
         public void Scream()
