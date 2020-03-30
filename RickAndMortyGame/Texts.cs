@@ -39,6 +39,10 @@ namespace RickAndMortyGame
                 "attic", "\n\n\n\n\nYou're in the attic. Now you're lost in the dark" +
                     "there seem to be dead mice and bats everywhere. Run for your life!\n\n" +
                     "Obvious exits are UPSTAIRS\n"
+            },
+            {
+                "mortysRoom", "\n\n\n\n\nYou're in Morty's Room. It stinks!\n\n" +
+                    "Obvious exits are UPSTAIRS\n"
             }
         };
     }
