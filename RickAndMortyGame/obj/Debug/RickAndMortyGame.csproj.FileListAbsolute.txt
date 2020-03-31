@@ -1,0 +1,6 @@
+C:\ElevenFiftyProjects\ClassProjects\rickandmorty-master\rickandmorty-master\RickAndMortyGame\bin\Debug\RickAndMortyGame.exe.config
+C:\ElevenFiftyProjects\ClassProjects\rickandmorty-master\rickandmorty-master\RickAndMortyGame\bin\Debug\RickAndMortyGame.exe
+C:\ElevenFiftyProjects\ClassProjects\rickandmorty-master\rickandmorty-master\RickAndMortyGame\bin\Debug\RickAndMortyGame.pdb
+C:\ElevenFiftyProjects\ClassProjects\rickandmorty-master\rickandmorty-master\RickAndMortyGame\obj\Debug\RickAndMortyGame.csprojAssemblyReference.cache
+C:\ElevenFiftyProjects\ClassProjects\rickandmorty-master\rickandmorty-master\RickAndMortyGame\obj\Debug\RickAndMortyGame.exe
+C:\ElevenFiftyProjects\ClassProjects\rickandmorty-master\rickandmorty-master\RickAndMortyGame\obj\Debug\RickAndMortyGame.pdb
