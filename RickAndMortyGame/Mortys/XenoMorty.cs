@@ -31,13 +31,15 @@ namespace RickAndMortyGame.Mortys
         {
             Random rand = new Random();
             int type = rand.Next(4);
+            string specialAttack = "Spit Attack";
+            string normalAttack = "Slash Attack";
             if (type == 0)
             {
-                return new Attack(10, 20, DamageType.Acid);
+                return new Attack(10, 20, DamageType.Acid, specialAttack);
             }
             else
             {
-                return new Attack(5, 15, DamageType.Slashing);
+                return new Attack(5, 15, DamageType.Slashing, normalAttack);
             }
         }
     }

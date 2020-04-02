@@ -33,7 +33,8 @@ namespace RickAndMortyGame.Mortys
         //    once it's actually used somewhere:
         public Attack Attack()
         {
-            return new Attack(5, 10, DamageType.Water);
+            string name = "Splash Attack";
+            return new Attack(5, 10, DamageType.Water, name);
         }
     }
 }

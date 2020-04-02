@@ -33,7 +33,7 @@ namespace RickAndMortyGame.Mortys
         //    once it's actually used somewhere:
         public Attack Attack()
         {
-            return new Attack(5, 10, DamageType.Slashing);
+            return new Attack(5, 10, DamageType.Slashing, "Paw Slap");
         }
     }
 }
