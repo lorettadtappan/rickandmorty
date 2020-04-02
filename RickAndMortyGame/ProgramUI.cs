@@ -1,4 +1,5 @@
-﻿using System;
+﻿using RickAndMortyGame.Mortys;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -11,6 +12,7 @@ namespace RickAndMortyGame
         // This can be a class later JERRY IS DAD BETH IS MOM AND SUMMER IS SISTER MR POOPY BUTT
         public enum Item { plumbus, meeseeks, portalgun, beer };
         public List<Item> inventory = new List<Item>();
+       
 
         public static Room garage = new Room(
             Texts.Splashes["garage"],
@@ -152,5 +154,7 @@ namespace RickAndMortyGame
                 }
             }
         }
+
+        
     }
 }
