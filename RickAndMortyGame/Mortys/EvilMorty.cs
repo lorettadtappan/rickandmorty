@@ -33,7 +33,8 @@ namespace RickAndMortyGame.Mortys
         //    once it's actually used somewhere:
         public Attack Attack()
         {
-            return new Attack(10, 20, DamageType.Necrotic);
+            string name = "Death Touch";
+            return new Attack(10, 20, DamageType.Necrotic, name);
         }
     }
 }

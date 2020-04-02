@@ -19,7 +19,8 @@ namespace RickAndMortyGame.Mortys
         {
             int maxDamage = 30;
             int minDamage = 5;
-            Attack pileDrive = new Attack(minDamage, maxDamage, RickAndMortyGame.Attack.DamageType.Bludgeoning);
+            string name = "Pile Drive";
+            Attack pileDrive = new Attack(minDamage, maxDamage, RickAndMortyGame.Attack.DamageType.Bludgeoning, name);
             return pileDrive;
         }
 
