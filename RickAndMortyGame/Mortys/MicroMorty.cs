@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace RickAndMortyGame.Mortys
 {
-    class MicroMorty
+    class MicroMorty : IMorty
     {
         public int Health { get; set; }
 
@@ -15,6 +15,16 @@ namespace RickAndMortyGame.Mortys
             Health = 50;
         }
 
+
+        public void Scream()
+        {
+            Console.WriteLine("aaaaaahhhhhhh!!!!");
+        }
+
+        public void Hurt(Attack attack)
+        {
+            Health -= attack.Damage;
+        }
         public Attack Attack() 
         {
             int maxDamage = 30;
@@ -23,15 +33,6 @@ namespace RickAndMortyGame.Mortys
             Attack pileDrive = new Attack(minDamage, maxDamage, RickAndMortyGame.Attack.DamageType.Bludgeoning, name);
             return pileDrive;
         }
-
-        void Scream()
-        {
-            Console.WriteLine("aaaaaahhhhhhh!!!!");
-        }
-
-        void Hurt(Attack attack)
-        {
-            Health -= attack.Damage;
-        }
+        
     }
 }
