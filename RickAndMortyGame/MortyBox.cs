@@ -30,5 +30,13 @@ namespace RickAndMortyGame
                 mortys.Remove(morty);
             }
         }
+
+        public void ListMortys()
+        {
+            foreach (IMorty morty in mortys)
+            {
+                Console.WriteLine(morty);
+            }
+        }
     }
 }

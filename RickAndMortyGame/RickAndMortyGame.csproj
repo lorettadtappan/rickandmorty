@@ -44,9 +44,11 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Attack.cs" />
+    <Compile Include="MortyBox.cs" />
     <Compile Include="Mortys\EvilMorty.cs" />
     <Compile Include="Mortys\IMorty.cs" />
     <Compile Include="Mortys\MerMorty.cs" />
+    <Compile Include="Mortys\MicroMorty.cs" />
     <Compile Include="Mortys\WerewolfMorty.cs" />
     <Compile Include="Mortys\XenoMorty.cs" />
     <Compile Include="Program.cs" />
