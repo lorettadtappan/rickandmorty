@@ -10,7 +10,7 @@ namespace RickAndMortyGame
     public class ProgramUI
     {
         // This can be a class later JERRY IS DAD BETH IS MOM AND SUMMER IS SISTER MR POOPY BUTT
-        public enum Item { plumbus, meeseeks, portalgun, beer };
+        public enum Item { plumbus, meeseeks, portalgun, beer, tinyRick, blimBlam };
         public List<Item> inventory = new List<Item>();
        
 
@@ -44,6 +44,11 @@ namespace RickAndMortyGame
             new List<string> { "upstairs" },
             new List<Item> { }
         );
+        public static Room laboratory = new Room(
+        Texts.Splashes["laboratory"],
+        new List<string> { "underneath", "hidden" },
+        new List<Item> { Item.tinyRick, Item.blimBlam }
+        );
 
         public Dictionary<string, Room> RoomDictionary = new Dictionary<string, Room>
         {
@@ -52,7 +57,8 @@ namespace RickAndMortyGame
             { "house", house },
             { "upstairs", upstairs },
             { "attic", attic },
-            { "mortysRoom", mortysRoom }
+            { "mortysRoom", mortysRoom },
+            { "laboratory", laboratory }
         };
 
         public void Run()

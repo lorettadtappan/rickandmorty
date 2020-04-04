@@ -49,6 +49,7 @@
     <Compile Include="Mortys\IMorty.cs" />
     <Compile Include="Mortys\MerMorty.cs" />
     <Compile Include="Mortys\MicroMorty.cs" />
+    <Compile Include="Mortys\Morticia.cs" />
     <Compile Include="Mortys\WerewolfMorty.cs" />
     <Compile Include="Mortys\XenoMorty.cs" />
     <Compile Include="Program.cs" />
